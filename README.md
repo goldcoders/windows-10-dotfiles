@@ -3,7 +3,7 @@
 I have Asus G14, and it would be a waste if I installed archlinux, Im already happy with my Huawei Matebook 13 with Arch So, So I force myself to Re-Config My Workflow for Windows
 
 ## WSL Arch
-> Seriously Im an Arch User , lost in Windows, I do have some good stuff that can only be run in arch
+> Seriously Im an Arch User , lost in Windows, I do have some good scripts that can only be run in arch
 
 ## Powershell
 > I hate to use CMD , i dont wanna use git-bash on windows cause it sucks, i might as well learn powershell 
