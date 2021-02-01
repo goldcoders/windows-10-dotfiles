@@ -16,3 +16,6 @@ I have Asus G14, and it would be a waste if I installed archlinux, Im already ha
 
 ## Powertoys
 > No Tiling Window Manager It Sucks , but powertoys meh but still worth than nothing
+
+## Choco, Scoop, Winget
+> Still Pacman is the Best Package Manager out there, But I hate going to Website and Download Stuff
