@@ -18,6 +18,7 @@ Remove-Item alias:echo
 Remove-Item alias:rm
 Remove-Item alias:ls
 Remove-Item alias:gl -Force
+
 # -------------------------------------------------------------------------------------------------
 # Fuzzy Finder Commands
 function Ccd ($cmdletname) {
@@ -30,6 +31,7 @@ function ef ($cmdletname) {
 # UNIX Commands
 function rf($filepath) { Remove-Item -Path $filepath -Recurse -Force }
 function l { Get-ChildItem -Path . }
+function c {clear}
 function ls { ls.exe --color=auto $args }
 function ll { ls.exe -l --color=auto $args }
 function la { ls.exe -a --color=auto $args }
@@ -140,12 +142,17 @@ function Remove-Tag-Remote { git push --delete origin $args }
 function Remove-Tag-Local { git tag -d $args }
 function Push-Tag { git push origin --tags --force }
 function Add-Wip { "git add . && git commit -m 'wip'" }
+
+function pass {arch run pass $args}
 # -------------------------------------------------------------------------------------------------
 # Laravel Commands
 function Invoke-Tinker-Command { php artisan tinker }
 function Invoke-Artisan-Command { php artisan $args }
 function Invoke-Fresh-Command { php artisan migrate:fresh --seed }
 function Invoke-Phpunit { .\vendor\bin\phpunit $args }
+function Update-FlutterSDK { pub global run fvm:main use $args}
+
+function Get-Netlify-Config { code $env:appdata\netlify\Config\config.json}
 # -------------------------------------------------------------------------------------------------
 # Add All Alias to Commands Shortcuts
 set-alias new-link ln
@@ -155,50 +162,52 @@ set-alias -Name ptag -Value Push-Tag -Option AllScope
 Set-Alias -Name fresh -Value Invoke-Fresh-Command -Option AllScope
 Set-Alias -Name wip -Value Add-Wip -Option AllScope
 Set-Alias -Name tinker -Value Invoke-Tinker-Command -Option AllScope
+Set-Alias -Name sdk -Value Update-FlutterSDK -Option AllScope
 Set-Alias -Name t -Value Invoke-Phpunit -Option AllScope
 # -------------------------------------------------------------------------------------------------
 # Directories Functions that will be Alias
-function Set-Path-www { Set-Location -Path C:\Users\masterpowers\www }
-function Set-Path-Laravel { Set-Location -Path C:\Users\masterpowers\Code\Laravel }
-function Set-Path-App { Set-Location -Path C:\Users\masterpowers\App }
-function Set-Path-Home { Set-Location -Path C:\Users\masterpowers }
-function Set-Path-Win32 { Set-Location -Path C:\Windows\System32 }
+function Set-Path-www { Set-Location -Path $env:USERPROFILE\www }
+function Set-Path-App { Set-Location -Path $env:USERPROFILE\App }
+function Set-Path-Home { Set-Location -Path $env:USERPROFILE }
+function Set-Path-Win32 { Set-Location -Path $env:windir\System32 }
 function Get-Back-OneDIR { Set-Location -Path ../ }
 function Get-Back-TwoDIR { Set-Location -Path ../../ }
 function Get-Back-ThreeDIR { Set-Location -Path ../../../ }
 function Get-Back-FourDIR { Set-Location -Path ../../../../ }
-function Set-Path-Workspace { Set-Location -Path C:\Users\masterpowers\.workspace}
+function Set-Path-Workspace { Set-Location -Path $env:USERPROFILE\.workspace}
 
 # Directory Aliases
 Set-Alias -Name www -Value Set-Path-www -Option AllScope
 Set-Alias -Name wp -Value Set-Path-Workspace -Option AllScope
 Set-Alias -Name app -Value Set-Path-App -Option AllScope
 Set-Alias -Name h -Value Set-Path-Home -Option AllScope
-Set-Alias -Name lv -Value Set-Path-Laravel -Option AllScope
 Set-Alias -Name '..' -Value Get-Back-OneDIR -Option AllScope
 Set-Alias -Name '..2' -Value Get-Back-TwoDIR -Option AllScope
 Set-Alias -Name '..3' -Value Get-Back-ThreeDIR -Option AllScope
 Set-Alias -Name '..4' -Value Get-Back-FourDIR -Option AllScope
-Set-Alias -Name s32 -Value Set-Path-Win32 -Option AllScope
+Set-Alias -Name w32 -Value Set-Path-Win32 -Option AllScope
 # -------------------------------------------------------------------------------------------------
 # Config files Functions that will be Alias
-function Open-Workspace($name){code "C:\Users\masterpowers\.workspace\${name}.code-workspace"}
-function Open-Vs-Keys { code C:\Users\masterpowers\AppData\Roaming\Code\User\keybindings.json }
-function Open-Vs-Settings { code C:\Users\masterpowers\AppData\Roaming\Code\User\settings.json }
-function Open-Vim-Config { code C:\Users\masterpowers\AppData\Local\nvim\init.vim }
-function Open-Alacritty-Config { code C:\Users\masterpowers\AppData\Roaming\alacritty\alacritty.yml }
-function Open-Etc-Host { code C:\Windows\System32\Drivers\etc\hosts }
-function Open-Profile { code  C:\Users\masterpowers\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 }
+function Open-Workspace($name){code "$env:USERPROFILE\.workspace\${name}.code-workspace"}
+function Open-Vs-Keys { code $env:appdata\Code\User\keybindings.json }
+function Open-Vs-Settings { code $env:appdata\Code\User\settings.json } 
+function Open-Vim-Config { code $env:LOCALAPPDATA\nvim\init.vim }
+function Open-Alacritty-Config { code $env:appdata\alacritty\alacritty.yml }
+function Open-Etc-Host { code $env:windir\System32\Drivers\etc\hosts }
+function Open-Profile { code  $profile }
+
 
 # Config Aliases
-Set-Alias -Name cc -Value Open-Workspace -Option AllScope
+Set-Alias -Name ws -Value Open-Workspace -Option AllScope
 Set-Alias -Name vskey -Value Open-Vs-Keys -Option AllScope
 Set-Alias -Name vset -Value Open-Vs-Settings -Option AllScope
 Set-Alias -Name cfv -Value Open-Vim-Config -Option AllScope
 Set-Alias -Name etc -Value Open-Etc-Hosts -Option AllScope
 Set-Alias -Name pro -Value Open-Profile -Option AllScope
+Set-Alias -Name nc -Value Get-Netlify-Config -Option AllScope
 # -------------------------------------------------------------------------------------------------
 # Beautify our terminal
 Invoke-Expression (&starship init powershell)
 # FNM Node Js
 fnm env --use-on-cd | Out-String | Invoke-Expression
+
