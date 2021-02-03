@@ -142,7 +142,6 @@ function Remove-Tag-Remote { git push --delete origin $args }
 function Remove-Tag-Local { git tag -d $args }
 function Push-Tag { git push origin --tags --force }
 function Add-Wip { "git add . && git commit -m 'wip'" }
-
 function pass {arch run pass $args}
 # -------------------------------------------------------------------------------------------------
 # Laravel Commands
@@ -151,8 +150,8 @@ function Invoke-Artisan-Command { php artisan $args }
 function Invoke-Fresh-Command { php artisan migrate:fresh --seed }
 function Invoke-Phpunit { .\vendor\bin\phpunit $args }
 function Update-FlutterSDK { pub global run fvm:main use $args}
-
 function Get-Netlify-Config { code $env:appdata\netlify\Config\config.json}
+function Get-Profiles {$PROFILE | Select-Object *Host* | Format-List}
 # -------------------------------------------------------------------------------------------------
 # Add All Alias to Commands Shortcuts
 set-alias new-link ln
@@ -175,7 +174,6 @@ function Get-Back-TwoDIR { Set-Location -Path ../../ }
 function Get-Back-ThreeDIR { Set-Location -Path ../../../ }
 function Get-Back-FourDIR { Set-Location -Path ../../../../ }
 function Set-Path-Workspace { Set-Location -Path $env:USERPROFILE\.workspace}
-
 # Directory Aliases
 Set-Alias -Name www -Value Set-Path-www -Option AllScope
 Set-Alias -Name wp -Value Set-Path-Workspace -Option AllScope
@@ -195,8 +193,6 @@ function Open-Vim-Config { code $env:LOCALAPPDATA\nvim\init.vim }
 function Open-Alacritty-Config { code $env:appdata\alacritty\alacritty.yml }
 function Open-Etc-Host { code $env:windir\System32\Drivers\etc\hosts }
 function Open-Profile { code  $profile }
-
-
 # Config Aliases
 Set-Alias -Name ws -Value Open-Workspace -Option AllScope
 Set-Alias -Name vskey -Value Open-Vs-Keys -Option AllScope
