@@ -1,4 +1,4 @@
-# Windows 10 Config and Set Up
+# Dotfiles in Windows 10
 
 I have Asus G14, and it would be a waste if I installed archlinux, Im already happy with my Huawei Matebook 13 with Arch So, So I force myself to Re-Config My Workflow for Windows
 
