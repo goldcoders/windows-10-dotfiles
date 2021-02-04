@@ -1,0 +1,301 @@
+// READ THIS BEFORE COPY PASTING!!!!
+// To Enable this on your Setup open windows terminal and press ctrl + , 
+// Note : guid is system specific , for each terminal
+// Copy and Paste what you need
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "defaultProfile": "{34a13805-9b56-5e89-9234-f02de44bd971}",
+  // You can add more global application settings here.
+  // To learn more about global settings, visit https://aka.ms/terminal-global-settings
+  // If enabled, selections are automatically copied to your clipboard.
+  "copyOnSelect": false,
+  // If enabled, formatted data is also copied to your clipboard
+  "copyFormatting": false,
+  // A profile specifies a command to execute paired with information about how it should look and feel.
+  // Each one of them will appear in the 'New Tab' dropdown,
+  //   and can be invoked from the commandline with `wt.exe -p xxx`
+  // To learn more about profiles, visit https://aka.ms/terminal-profile-settings
+  "profiles": {
+    "defaults": {
+      // Put settings here that you want to apply to all profiles.
+      "cursorShape": "filledBox",
+      "fontFace": "Hack"
+    },
+    "list": [
+      {
+        "guid": "{34a13805-9b56-5e89-9234-f02de44bd971}",
+        "hidden": false,
+        "name": "PowerShell 7 (x86)",
+        "source": "Windows.Terminal.PowershellCore",
+        "colorScheme": "Dracula",
+        "acrylicOpacity": 0.7,
+        "useAcrylic": true,
+        "backgroundImageOpacity": 0.5,
+        "background": "#181818",
+        "foreground": "#B3486B",
+        "cursorColor": "#F49C7A",
+        "selectionBackground": "#224F6E",
+        "scrollbarState": "hidden"
+      },
+      // {
+      //     "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+      //     "hidden": false,
+      //     "name": "PS7",
+      //     "source": "Windows.Terminal.PowershellCore",
+      //     "colorScheme": "Dracula",
+      //     "acrylicOpacity": 0.8,
+      //     "useAcrylic": true,
+      //     "backgroundImageOpacity": 0.5,
+      //     "background": "#181818",
+      //     "foreground": "#B3486B",
+      //     "cursorColor": "#F49C7A",
+      //     "selectionBackground": "#224F6E",
+      //     "scrollbarState": "hidden"
+      // },
+      {
+        "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+        "hidden": false,
+        "name": "Arch",
+        "source": "Windows.Terminal.Wsl",
+        "colorScheme": "Billionaire",
+        "icon": "ms-appdata:///roaming/arch.png",
+        "acrylicOpacity": 0.8,
+        "startingDirectory": "%USERPROFILE%",
+        "useAcrylic": true,
+        "backgroundImageOpacity": 0.5,
+        "background": "#181818",
+        "foreground": "#B3486B",
+        "cursorColor": "#F49C7A",
+        "selectionBackground": "#224F6E",
+        "scrollbarState": "hidden"
+      },
+      {
+        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "hidden": true,
+        "name": "Ubuntu",
+        "source": "Windows.Terminal.Wsl",
+        "startingDirectory": "%USERPROFILE%",
+        "colorScheme": "Ubuntu",
+        "acrylicOpacity": 0.8,
+        "useAcrylic": true,
+        "backgroundImageOpacity": 0.5,
+        "background": "#181818",
+        "foreground": "#B3486B",
+        "cursorColor": "#F49C7A",
+        "selectionBackground": "#224F6E",
+        "scrollbarState": "hidden"
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": true,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure",
+        "colorScheme": "Solarized Dark",
+        "acrylicOpacity": 0.8,
+        "useAcrylic": true,
+        "backgroundImageOpacity": 0.5,
+        "background": "#181818",
+        "foreground": "#B3486B",
+        "cursorColor": "#F49C7A",
+        "selectionBackground": "#224F6E",
+        "scrollbarState": "hidden"
+      },
+      {
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "hidden": true,
+        "name": "PowerShell",
+        "source": "Windows.Terminal.PowershellCore"
+      }
+    ]
+  },
+  // Add custom color schemes to this array.
+  // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
+  "schemes": [
+    {
+      "background": "#2C3E50",
+      "black": "#3B4252",
+      "blue": "#FF5792",
+      "brightBlack": "#4C566A",
+      "brightBlue": "#61afef",
+      "brightCyan": "#1793D1",
+      "brightGreen": "#92b279",
+      "brightPurple": "#9F97CA",
+      "brightRed": "#FF5792",
+      "brightWhite": "#8FBCBB",
+      "brightYellow": "#ebcb8b",
+      "cyan": "#1793D1",
+      "foreground": "#FF5792",
+      "green": "#F49C7A",
+      "name": "Billionaire",
+      "purple": "#E58CD7",
+      "red": "#BF616A",
+      "white": "#F49C7A",
+      "yellow": "#ebcb8b"
+    },
+    {
+      "background": "#282A36",
+      "black": "#21222C",
+      "blue": "#BD93F9",
+      "brightBlack": "#6272A4",
+      "brightBlue": "#D6ACFF",
+      "brightCyan": "#A4FFFF",
+      "brightGreen": "#69FF94",
+      "brightPurple": "#FF92DF",
+      "brightRed": "#FF6E6E",
+      "brightWhite": "#FFFFFF",
+      "brightYellow": "#FFFFA5",
+      "cyan": "#8BE9FD",
+      "foreground": "#F8F8F2",
+      "green": "#50FA7B",
+      "name": "Dracula",
+      "purple": "#FF79C6",
+      "red": "#FF5555",
+      "white": "#F8F8F2",
+      "yellow": "#F1FA8C"
+    },
+    {
+      "name": "OneDark",
+      "black": "#1e2127",
+      "red": "#e06c75",
+      "green": "#98c379",
+      "yellow": "#d19a66",
+      "blue": "#61afef",
+      "purple": "#c678dd",
+      "cyan": "#56b6c2",
+      "white": "#abb2bf",
+      "brightBlack": "#5c6370",
+      "brightRed": "#e06c75",
+      "brightGreen": "#98c379",
+      "brightYellow": "#d19a66",
+      "brightBlue": "#61afef",
+      "brightPurple": "#c678dd",
+      "brightCyan": "#56b6c2",
+      "brightWhite": "#ffffff",
+      "background": "#1e2127",
+      "foreground": "#abb2bf",
+      "cursorColor": "#aaaaaa"
+    },
+    {
+      "name": "Nord",
+      "foreground": "#dee3ec",
+      "background": "#2c3240",
+      "black": "#2c3240",
+      "red": "#C50F1F",
+      "green": "#92b279",
+      "yellow": "#C19C00",
+      "blue": "#6e8fb3",
+      "purple": "#881798",
+      "cyan": "#76b3c5",
+      "white": "#CCCCCC",
+      "brightBlack": "#3b4356",
+      "brightRed": "#af4b57",
+      "brightGreen": "#92b279",
+      "brightYellow": "#e5c078",
+      "brightBlue": "#6e8fb3",
+      "brightPurple": "#a3799d",
+      "brightCyan": "#7daeac",
+      "brightWhite": "#e7eaf1"
+    },
+    {
+      "name": "Solarized Dark",
+      "foreground": "#FDF6E3",
+      "background": "#073642",
+      "colors": [
+        "#073642",
+        "#D30102",
+        "#859900",
+        "#B58900",
+        "#268BD2",
+        "#D33682",
+        "#2AA198",
+        "#EEE8D5",
+        "#002B36",
+        "#CB4B16",
+        "#586E75",
+        "#657B83",
+        "#839496",
+        "#6C71C4",
+        "#93A1A1",
+        "#FDF6E3"
+      ]
+    },
+    {
+      "name": "Ubuntu",
+      "foreground": "#EEEEEC",
+      "background": "#2C001E",
+      "colors": [
+        "#EEEEEC",
+        "#16C60C",
+        "#729FCF",
+        "#B58900",
+        "#268BD2",
+        "#D33682",
+        "#2AA198",
+        "#EEE8D5",
+        "#002B36",
+        "#CB4B16",
+        "#586E75",
+        "#657B83",
+        "#839496",
+        "#6C71C4",
+        "#93A1A1",
+        "#FDF6E3"
+      ]
+    }
+  ],
+  // Add custom actions and keybindings to this array.
+  // To unbind a key combination from your defaults.json, set the command to "unbound".
+  // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
+  "actions": [
+    // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
+    // These two lines additionally bind them to Ctrl+C and Ctrl+V.
+    // To learn more about selection, visit https://aka.ms/terminal-selection
+    // { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+    // { "command": "paste", "keys": "ctrl+v" },
+    // Press Ctrl+Shift+F to open the search box
+    {
+      "command": "find",
+      "keys": "ctrl+shift+f"
+    },
+    // Press Alt+Shift+D to open a new pane.
+    // - "split": "auto" makes this pane open in the direction that provides the most surface area.
+    // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
+    // To learn more about panes, visit https://aka.ms/terminal-panes
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "keys": "alt+shift+d"
+    },
+    {
+      "command": {
+        "action": "moveFocus",
+        "direction": "down"
+      },
+      "keys": "alt+shift+j"
+    },
+    {
+      "command": {
+        "action": "moveFocus",
+        "direction": "left"
+      },
+      "keys": "alt+shift+h"
+    },
+    {
+      "command": {
+        "action": "moveFocus",
+        "direction": "right"
+      },
+      "keys": "alt+shift+l"
+    },
+    {
+      "command": {
+        "action": "moveFocus",
+        "direction": "up"
+      },
+      "keys": "alt+shift+k"
+    }
+  ]
+}
