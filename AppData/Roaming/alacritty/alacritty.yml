@@ -1,5 +1,4 @@
 env:
-  TERM: "alacritty"
   LANG: "en_US.UTF-8"
   LC_CTYPE: en_US.UTF-8
 draw_bold_text_with_bright_colors: true
@@ -55,32 +54,32 @@ font:
 
 # Colors (Tomorrow Night)
 colors:
-  name: Digerati
-  author: ""
+  # Default colors
   primary:
-    background: "#000000"
-    foreground: "#ffffff"
-  cursor:
-    text: "#000000"
-    cursor: "#ffffff"
+    background: '#263238'
+    foreground: '#eeffff'
+
+  # Normal colors
   normal:
-    black: "#303030"
-    red: "#c03000"
-    green: "#b1d631"
-    yellow: "#fecf35"
-    blue: "#426870"
-    magenta: "#6d506d"
-    cyan: "#4bb5c1"
-    white: "#e2e2e5"
+    black: '#000000' # Arbitrary
+    red: '#e53935'
+    green: '#91b859'
+    yellow: '#ffb62c'
+    blue: '#6182b8'
+    magenta: '#ff5370' # Dark pink of the original material theme
+    cyan: '#39adb5'
+    white: '#a0a0a0' # Arbitrary
+
+  # Bright colors
   bright:
-    black: "#5f5f5f"
-    red: "#ff3a78"
-    green: "#a6cd07"
-    yellow: "#b5c865"
-    blue: "#4a7781"
-    magenta: "#ff3b77"
-    cyan: "#4bb5c1"
-    white: "#e2e2e5"
+    black: '#4e4e4e' # Arbitrary
+    red: '#ff5370'
+    green: '#c3e88d'
+    yellow: '#ffcb6b'
+    blue: '#82aaff'
+    magenta: '#f07178' # Pink of the original material theme
+    cyan: '#89ddff'
+    white: '#ffffff' # Arbitrary
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
