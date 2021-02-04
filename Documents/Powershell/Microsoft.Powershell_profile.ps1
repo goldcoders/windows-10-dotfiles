@@ -21,17 +21,16 @@ Remove-Item alias:gl -Force
 
 # -------------------------------------------------------------------------------------------------
 # Fuzzy Finder Commands
-function Ccd ($cmdletname) {
-	Set-Location (Get-ChildItem . -Recurse | Where-Object { $_.PSIsContainer } | Invoke-Fzf)
+function Ccd () {
+	Set-Location (Set-Location (Get-ChildItem . -Recurse | Where-Object { $_.PSIsContainer } | Invoke-Fzf))
 }
-function ef ($cmdletname) {
-	Get-ChildItem . -Recurse -Attributes !Directory | Invoke-Fzf | ForEach-Object { code $_ }
-}
+
+function p{fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'}
 # -------------------------------------------------------------------------------------------------
 # UNIX Commands
 function rf($filepath) { Remove-Item -Path $filepath -Recurse -Force }
 function l { Get-ChildItem -Path . }
-function c {clear}
+function c {Clear-Host}
 function ls { ls.exe --color=auto $args }
 function ll { ls.exe -l --color=auto $args }
 function la { ls.exe -a --color=auto $args }
@@ -91,8 +90,8 @@ function find-file($name) {
 function show-links($dir) {
 	get-childitem $dir | where-object { $_.LinkType } | select-object FullName, LinkType, Target
 }
-function which($name) {
-	Get-Command $name | Select-Object -ExpandProperty Definition
+function which() {
+	Get-Command $args | Select-Object -ExpandProperty Definition
 }
 function reboot {
 	shutdown /r /t 0
@@ -192,7 +191,7 @@ function Open-Vs-Settings { code $env:appdata\Code\User\settings.json }
 function Open-Vim-Config { code $env:LOCALAPPDATA\nvim\init.vim }
 function Open-Alacritty-Config { code $env:appdata\alacritty\alacritty.yml }
 function Open-Etc-Host { code $env:windir\System32\Drivers\etc\hosts }
-function Open-Profile { code  $profile }
+function Open-Profile { code $profile.CurrentUserAllHosts}
 # Config Aliases
 Set-Alias -Name ws -Value Open-Workspace -Option AllScope
 Set-Alias -Name vskey -Value Open-Vs-Keys -Option AllScope
@@ -201,6 +200,16 @@ Set-Alias -Name cfv -Value Open-Vim-Config -Option AllScope
 Set-Alias -Name etc -Value Open-Etc-Hosts -Option AllScope
 Set-Alias -Name pro -Value Open-Profile -Option AllScope
 Set-Alias -Name nc -Value Get-Netlify-Config -Option AllScope
+Set-Alias -Name cfa -Value Open-Alacritty-Config -Option AllScope
+
+# Fuzzy finder alias
+Set-Alias -Name fkill -Value Invoke-FuzzyKillProcess -Option AllScope
+# Install-Module ZLocation -Scope CurrentUser
+Set-Alias -Name fz -Value Invoke-FuzzyZLocation -Option AllScope
+Set-Alias -Name fgs -Value Invoke-FuzzyGitStatus -Option AllScope
+Set-Alias -Name fh -Value Invoke-FuzzyHistory -Option AllScope
+Set-Alias -Name fd -Value Invoke-FuzzySetLocation -Option AllScope
+
 # -------------------------------------------------------------------------------------------------
 # Beautify our terminal
 Invoke-Expression (&starship init powershell)
